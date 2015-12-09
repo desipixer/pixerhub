@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="pixerApp">
+<head>
+    <title>Pixer </title>
+</head>
+<body ng-controller="myCtrl">
+    <div class="row">
+        <div class="col-sm-2">
+            <ul class="nav nav-tabs nav-stacked nav-pills" role="tablist">
+                <li ng-repeat="item in menuItems" ng-class="item.class" >
+                    <a class="btn-lg" ng-click="changeTab(item.tab)" ng-href="#/{{item.route}}"> {{item.name}} </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <div class="tab-content">
+                <div ng-repeat="item in menuItems" class="tab-pane" ng-class="{ 'active' : view_tab == '{{item.tab}}'}" ng-show="view_tab == '{{item.tab}}'" >
+                    <div ng-view>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.18/angular-route.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/main.css" rel="stylesheet" />
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/services.js"></script>
+    <script src="Scripts/controller.js" ></script>
+    <script>
+
+    </script>
+</body>
+</html>
